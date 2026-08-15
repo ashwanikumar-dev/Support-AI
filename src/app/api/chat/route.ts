@@ -5,7 +5,7 @@ import { GoogleGenAI } from "@google/genai";
 import { NextRequest, NextResponse } from "next/server";
 
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "http://127.0.0.1:5500",
+  "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
@@ -76,7 +76,7 @@ export async function POST(req: NextRequest) {
 
     console.log("PROMPT LENGTH:", prompt.length);
     console.log("PROMPT:", prompt);
-    
+
     const res = await ai.models.generateContent({
       model: "gemini-3.6-flash",
       contents: prompt,
