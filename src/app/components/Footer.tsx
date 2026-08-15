@@ -2,6 +2,7 @@
 
 import { Bot, Heart, Mail } from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -17,8 +18,13 @@ const Footer = () => {
             transition={{ duration: 0.4 }}
             className="flex items-center gap-3"
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-950 text-white">
-              <Bot size={17} />
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-950 transition-transform duration-200 group-hover:scale-105">
+              <Image
+                src="/supportAi_logo.png"
+                alt="Support AI"
+                width={40}
+                height={40}
+              />
             </div>
 
             <div>

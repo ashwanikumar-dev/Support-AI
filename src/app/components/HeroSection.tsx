@@ -1,14 +1,8 @@
 "use client";
 
-import {
-  ArrowRight,
-  Bot,
-  Check,
-  MessageCircle,
-  Sparkles,
-  Zap,
-} from "lucide-react";
+import { ArrowRight, Bot, Check, MessageCircle, Zap } from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 interface HeroSectionProps {
@@ -30,7 +24,7 @@ const HeroSection = ({ email }: HeroSectionProps) => {
   return (
     <section className="relative overflow-hidden px-6 pb-28 pt-28 sm:pb-36 sm:pt-36">
       {/* Hero glow */}
-      <div className="pointer-events-none absolute left-1/2 top-20 -z-10 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-zinc-200/40 blur-[120px]" />
+      <div className="pointer-events-none absolute left-1/2 top-20 -z-10 h-125 w-175 -translate-x-1/2 rounded-full bg-zinc-200/40 blur-[120px]" />
 
       <div className="mx-auto max-w-7xl">
         <div className="grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
@@ -51,7 +45,7 @@ const HeroSection = ({ email }: HeroSectionProps) => {
               className="mb-7 inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/80 px-3.5 py-2 text-xs font-medium text-zinc-600 shadow-sm backdrop-blur"
             >
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-zinc-950 text-white">
-                <Sparkles size={11} />
+                <Bot size={11} />
               </span>
               AI-powered customer support
             </motion.div>
@@ -127,7 +121,7 @@ const HeroSection = ({ email }: HeroSectionProps) => {
               delay: 0.15,
               ease: "easeOut",
             }}
-            className="relative mx-auto w-full max-w-[520px]"
+            className="relative mx-auto w-full max-w-130"
           >
             {/* Back glow */}
             <div className="absolute inset-10 rounded-[40px] bg-zinc-300/30 blur-3xl" />
@@ -137,8 +131,13 @@ const HeroSection = ({ email }: HeroSectionProps) => {
               {/* Window header */}
               <div className="flex items-center justify-between border-b border-zinc-100 px-5 py-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-950 text-white">
-                    <Bot size={17} />
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-950 transition-transform duration-200 group-hover:scale-105">
+                    <Image
+                      src="/supportAi_logo.png"
+                      alt="Support AI"
+                      width={40}
+                      height={40}
+                    />
                   </div>
 
                   <div>
@@ -186,8 +185,13 @@ const HeroSection = ({ email }: HeroSectionProps) => {
                   transition={{ delay: 1.1, duration: 0.5 }}
                   className="mb-5 flex items-end gap-2"
                 >
-                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white text-zinc-700 shadow-sm ring-1 ring-zinc-100">
-                    <Bot size={13} />
+                  <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-zinc-950 transition-transform duration-200 group-hover:scale-105">
+                    <Image
+                      src="/supportAi_logo.png"
+                      alt="Support AI"
+                      width={40}
+                      height={40}
+                    />
                   </div>
 
                   <div className="max-w-[78%] rounded-2xl rounded-bl-md border border-zinc-100 bg-white px-4 py-3 text-sm leading-5 text-zinc-700 shadow-sm">
@@ -215,8 +219,13 @@ const HeroSection = ({ email }: HeroSectionProps) => {
                   transition={{ delay: 2.2 }}
                   className="flex items-center gap-2"
                 >
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white text-zinc-700 shadow-sm ring-1 ring-zinc-100">
-                    <Bot size={13} />
+                  <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-zinc-950 transition-transform duration-200 group-hover:scale-105">
+                    <Image
+                      src="/supportAi_logo.png"
+                      alt="Support AI"
+                      width={40}
+                      height={40}
+                    />
                   </div>
 
                   <div className="flex items-center gap-1 rounded-2xl rounded-bl-md border border-zinc-100 bg-white px-4 py-3 shadow-sm">

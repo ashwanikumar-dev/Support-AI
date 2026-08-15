@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 function EmbededClient({ ownerId }: { ownerId: string }) {
   const router = useRouter();
@@ -35,15 +36,20 @@ function EmbededClient({ ownerId }: { ownerId: string }) {
 
   return (
     <div className="h-screen overflow-hidden bg-zinc-50 text-zinc-950">
-      {/* ================= HEADER ================= */}
+      {/*HEADER*/}
       <header className="border-b border-zinc-200 bg-white/80 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
           <div
             onClick={() => router.push("/")}
             className="flex items-center gap-3 cursor-pointer"
           >
-            <div className="flex size-9 items-center justify-center rounded-xl bg-black text-white shadow-sm">
-              <Bot className="size-4" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-950 transition-transform duration-200 group-hover:scale-105">
+              <Image
+                src="/supportAi_logo.png"
+                alt="Support AI"
+                width={40}
+                height={40}
+              />
             </div>
 
             <div>
@@ -65,9 +71,9 @@ function EmbededClient({ ownerId }: { ownerId: string }) {
         </div>
       </header>
 
-      {/* ================= MAIN ================= */}
+      {/*MAIN*/}
       <main className="relative mx-auto h-[calc(100vh-4rem)] max-w-7xl px-6 py-4 lg:px-8">
-        {/* ================= INTRO ================= */}
+        {/*INTRO*/}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -94,9 +100,9 @@ function EmbededClient({ ownerId }: { ownerId: string }) {
           </div>
         </motion.div>
 
-        {/* ================= CONTENT ================= */}
+        {/*CONTENT*/}
         <div className="mt-6 grid min-h-0 gap-6 lg:grid-cols-[1.6fr_1fr]">
-          {/* ================= LEFT ================= */}
+          {/*LEFT*/}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -211,7 +217,7 @@ function EmbededClient({ ownerId }: { ownerId: string }) {
             </div>
           </motion.section>
 
-          {/* ================= RIGHT ================= */}
+          {/*RIGHT*/}
           <div className="flex flex-col">
             {/* Preview */}
             <motion.section
@@ -356,7 +362,7 @@ function EmbededClient({ ownerId }: { ownerId: string }) {
           </div>
         </div>
 
-        {/* ================= BOTTOM NOTE ================= */}
+        {/*BOTTOM NOTE*/}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

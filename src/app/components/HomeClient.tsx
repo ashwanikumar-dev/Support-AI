@@ -7,6 +7,7 @@ import ProfileDropdown from "./ProfileDropdown";
 import HeroSection from "./HeroSection";
 import FeatureSection from "./FeatureSection";
 import Footer from "./Footer";
+import Image from "next/image";
 
 const HomeClient = ({ email }: { email: string }) => {
   const handleLogin = () => {
@@ -53,12 +54,17 @@ const HomeClient = ({ email }: { email: string }) => {
               }}
               className="group flex items-center gap-2.5"
             >
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-950 text-white shadow-sm transition-transform duration-200 group-hover:scale-105">
-                <Bot size={16} strokeWidth={2.2} />
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-950 transition-transform duration-200 group-hover:scale-105">
+                <Image
+                  src="/supportAi_logo.png"
+                  alt="Support AI"
+                  width={40}
+                  height={40}
+                />
               </div>
 
               <div className="text-left">
-                <div className="text-[15px] font-semibold tracking-tight">
+                <div className="text-lg font-medium tracking-tight">
                   Support <span className="text-zinc-400">AI</span>
                 </div>
               </div>

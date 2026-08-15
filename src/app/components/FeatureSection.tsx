@@ -11,6 +11,7 @@ import {
   Zap,
 } from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const FeatureSection = () => {
   const features = [
@@ -43,7 +44,7 @@ const FeatureSection = () => {
       className="relative overflow-hidden border-t border-zinc-200/80 bg-white px-6 py-28 sm:py-36"
     >
       {/* Background decoration */}
-      <div className="pointer-events-none absolute left-1/2 top-0 -z-0 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-zinc-100/70 blur-[100px]" />
+      <div className="pointer-events-none absolute left-1/2 top-0 z-0 h-100 w-175 -translate-x-1/2 rounded-full bg-zinc-100/70 blur-[100px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* Section heading */}
@@ -141,8 +142,13 @@ const FeatureSection = () => {
             <div className="pointer-events-none absolute right-0 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-zinc-700/30 blur-3xl" />
 
             <div className="relative flex items-start gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-zinc-950">
-                <Bot size={19} />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-950 transition-transform duration-200 group-hover:scale-105">
+                <Image
+                  src="/supportAi_logo.png"
+                  alt="Support AI"
+                  width={40}
+                  height={40}
+                />
               </div>
 
               <div>

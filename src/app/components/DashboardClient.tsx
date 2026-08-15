@@ -13,6 +13,7 @@ import {
   Save,
   Sparkles,
 } from "lucide-react";
+import Image from "next/image";
 
 const inputClass =
   "w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-sm font-medium text-zinc-900 placeholder:text-zinc-400 outline-none transition-all duration-200 hover:border-zinc-400 focus:border-zinc-950 focus:ring-4 focus:ring-zinc-100";
@@ -78,34 +79,35 @@ const DashboardClient = ({ ownerId }: DashboardClientProps) => {
 
   return (
     <div className="h-screen overflow-hidden bg-[#f5f5f5] text-zinc-950">
-      {/* =========================================================
-          BACKGROUND
-      ========================================================= */}
+      {/*BACKGROUND*/}
 
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-zinc-200/40 blur-3xl" />
 
-        <div className="absolute -bottom-40 right-0 h-[450px] w-[450px] rounded-full bg-zinc-200/30 blur-3xl" />
+        <div className="absolute -bottom-40 right-0 h-112.5 w-112.5 rounded-full bg-zinc-200/30 blur-3xl" />
       </div>
 
-      {/* =========================================================
-          NAVBAR
-      ========================================================= */}
+      {/*NAVBAR*/}
 
       <motion.header
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.4 }}
-        className="fixed left-0 right-0 top-0 z-50 h-[68px] border-b border-zinc-200 bg-white/90 backdrop-blur-xl"
+        className="fixed left-0 right-0 top-0 z-50 h-17 border-b border-zinc-200 bg-white/90 backdrop-blur-xl"
       >
-        <div className="mx-auto flex h-full max-w-[1500px] items-center justify-between px-5 sm:px-7">
+        <div className="mx-auto flex h-full max-w-375 items-center justify-between px-5 sm:px-7">
           {/* Brand */}
           <button
             onClick={() => navigate.push("/")}
             className="group flex items-center gap-3"
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-950 text-white shadow-sm transition-transform duration-200 group-hover:scale-105">
-              <Bot size={18} strokeWidth={2} />
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-zinc-950 transition-transform duration-200 group-hover:scale-105">
+              <Image
+                src="/supportAi_logo.png"
+                alt="Support AI"
+                width={40}
+                height={40}
+              />
             </div>
 
             <div className="text-left">
@@ -139,15 +141,11 @@ const DashboardClient = ({ ownerId }: DashboardClientProps) => {
         </div>
       </motion.header>
 
-      {/* =========================================================
-          MAIN
-      ========================================================= */}
+      {/*MAIN*/}
 
-      <main className="relative mx-auto h-screen max-w-[1500px] px-4 pb-5 pt-[84px] sm:px-6">
+      <main className="relative mx-auto h-screen max-w-375 px-4 pb-5 pt-21 sm:px-6">
         <div className="flex h-full min-h-0 flex-col">
-          {/* =====================================================
-              PAGE HEADER
-          ===================================================== */}
+          {/*PAGE HEADER*/}
 
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -209,9 +207,7 @@ const DashboardClient = ({ ownerId }: DashboardClientProps) => {
             </div>
           </motion.div>
 
-          {/* =====================================================
-              WORKSPACE
-          ===================================================== */}
+          {/*WORKSPACE*/}
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -219,9 +215,7 @@ const DashboardClient = ({ ownerId }: DashboardClientProps) => {
             transition={{ duration: 0.5, delay: 0.05 }}
             className="grid min-h-0 flex-1 gap-5 lg:grid-cols-[360px_minmax(0,1fr)]"
           >
-            {/* =================================================
-                LEFT — BUSINESS DETAILS
-            ================================================= */}
+            {/*LEFT — BUSINESS DETAILS*/}
 
             <section className="flex min-h-0 flex-col overflow-hidden rounded-3xl border border-zinc-300 bg-white shadow-[0_18px_50px_-25px_rgba(0,0,0,0.25)]">
               {/* Header */}
@@ -358,9 +352,7 @@ const DashboardClient = ({ ownerId }: DashboardClientProps) => {
               </div>
             </section>
 
-            {/* =================================================
-                RIGHT — KNOWLEDGE BASE
-            ================================================= */}
+            {/*RIGHT — KNOWLEDGE BASE */}
 
             <section className="flex min-h-0 flex-col overflow-hidden rounded-3xl border border-zinc-300 bg-white shadow-[0_18px_50px_-25px_rgba(0,0,0,0.25)]">
               {/* Header */}
